@@ -64,7 +64,14 @@ its `skills:` field. The full roster and skill matrix are in `docs/expert-roster
 - `npm test` runs in the Netlify build, so a failing commit never publishes (important because of D-002).
 - When the user asks for git pushes to `main`, commit with a clear imperative message.
 
+## Knowledge folders
+Every agent has `knowledge/<agent>/` with `docs/` (notes from official documentation, each with its source link) and
+`examples/` (small, tested worked examples). Each agent's **Before you answer** section requires reading all of it first and
+preferring it over memory. Run every example with `./knowledge/run-examples.sh` (Node ≥ 22.18). The agent-architect maintains
+`knowledge/**`; other agents propose additions via a Handoff.
+
 ## Map
 - `docs/`: research pack, decisions, roster
+- `knowledge/`: per-agent reference notes and tested examples
 - `.claude/agents/`: the 12 subagents
 - `.claude/skills/`: the 40 project skills

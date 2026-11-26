@@ -18,6 +18,7 @@ the app. Each file covers one topic and ends with its sources.
 | 3 | [03-architecture-netlify.md](03-architecture-netlify.md) | Static site + Netlify Functions, limits, Blobs, caching, env vars, deploy flow |
 | 4 | [04-agent-console-and-security.md](04-agent-console-and-security.md) | Agent Console design, password gate, scoped GitHub token, path allow-list, approval → commit → redeploy, long jobs |
 | 5 | [05-testing-and-accessibility.md](05-testing-and-accessibility.md) | Unit, contract, function, e2e and security tests; WCAG 2.2 AA checklist |
+| — | [../knowledge/](../knowledge/README.md) | Per-agent knowledge: official-doc notes with sources plus tested worked examples |
 | — | [decisions.md](decisions.md) | Decision log: static+Functions only, approve → `main`, Netlify Free plan, fine-grained PAT, team structure |
 | — | [expert-roster.md](expert-roster.md) | The 12-agent team, each role's job, and which agents share each skill (built in `.claude/agents` and `.claude/skills`; see `/CLAUDE.md`) |
 

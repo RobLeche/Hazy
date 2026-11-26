@@ -1,0 +1,43 @@
+/* Example 1 — Hazy design tokens: light, dark, increased contrast, reduced transparency.
+   Sources: ../docs/hig-color-and-dark-mode.md, hig-materials-liquid-glass.md, hig-typography.md, hig-accessibility-visual.md */
+:root {
+  --surface: #ffffff;            /* content layer: solid */
+  --surface-grouped: #f2f2f7;
+  --label: #1c1c1e;
+  --secondary-label: #6c6c70;    /* darker than Apple's 60% gray so it meets 4.5:1 for body-size text */
+  --accent: #0a62c9;
+  --glass-tint: rgba(255, 255, 255, 0.72);   /* functional layer (tab bar, sheets) */
+  --glass-border: rgba(255, 255, 255, 0.45);
+  --glass-blur: 20px;
+  /* Risk badges: solid fills, always paired with icon + text label */
+  --risk-none-bg: #e5e5ea;     --risk-none-fg: #1c1c1e;
+  --risk-low-bg: #1e6b3a;      --risk-low-fg: #ffffff;
+  --risk-moderate-bg: #ffcc00; --risk-moderate-fg: #1c1c1e;
+  --risk-high-bg: #b93a0b;     --risk-high-fg: #ffffff;
+  --risk-extreme-bg: #8b1a1a;  --risk-extreme-fg: #ffffff;
+  /* Type (HIG Large default, 1rem = 17px) */
+  --font-large-title: 2rem;    /* 34px */
+  --font-title-2: 1.294rem;    /* 22px */
+  --font-headline: 600 1rem/1.294 -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-body: 400 1rem/1.294 -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-footnote: 0.765rem;   /* 13px */
+  --target-min: 44px;
+  --radius-l: 22px;
+  --motion-standard: 280ms cubic-bezier(.2, .8, .2, 1);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --surface: #000000; --surface-grouped: #1c1c1e;
+    --label: #f2f2f7; --secondary-label: #a1a1a6; --accent: #4ea1ff;
+    --glass-tint: rgba(28, 28, 30, 0.72); --glass-border: rgba(255, 255, 255, 0.16);
+  }
+}
+@media (prefers-contrast: more) {
+  :root { --secondary-label: var(--label); --glass-tint: var(--surface); --glass-border: var(--label); }
+}
+@media (prefers-reduced-transparency: reduce) {
+  :root { --glass-tint: var(--surface-grouped); --glass-blur: 0px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  :root { --motion-standard: 0ms linear; }
+}

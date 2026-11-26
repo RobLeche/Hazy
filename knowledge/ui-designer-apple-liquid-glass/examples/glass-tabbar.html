@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Glass tab bar</title>
+<link rel="stylesheet" href="tokens.css">
+<style>
+  html { font-size: 106.25%; } /* 1rem = 17px (HIG Body) */
+  body { margin: 0; background: var(--surface); color: var(--label); font: var(--font-body); }
+  main { padding: 16px 16px 120px; }
+  .card { background: var(--surface-grouped); border-radius: var(--radius-l); padding: 16px; margin-bottom: 12px; } /* content layer: no glass */
+  nav.tabbar { position: fixed; left: 12px; right: 12px; bottom: calc(12px + env(safe-area-inset-bottom));
+    display: flex; justify-content: space-around; border-radius: 999px; padding: 6px;
+    background: var(--glass-tint); border: 1px solid var(--glass-border);
+    backdrop-filter: blur(var(--glass-blur)) saturate(160%); -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(160%); }
+  nav.tabbar a { min-width: var(--target-min); min-height: var(--target-min); display: grid; place-items: center; color: var(--label); text-decoration: none; font-size: var(--font-footnote); }
+  nav.tabbar a[aria-current="page"] { font-weight: 600; }
+</style></head>
+<body>
+<main>
+  <div class="card"><strong>Today</strong><p>Storms likely this afternoon</p></div>
+  <div class="card"><strong>Tomorrow</strong><p>Flooding possible on low roads</p></div>
+</main>
+<nav class="tabbar" aria-label="Sections">
+  <a href="#outlook" aria-current="page">Outlook</a><a href="#places">Places</a><a href="#settings">Settings</a>
+</nav>
+</body></html>

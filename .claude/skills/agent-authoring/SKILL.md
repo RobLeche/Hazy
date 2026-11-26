@@ -19,6 +19,9 @@ Hazy conventions:
 - Only `orchestrator` lists the `Agent` tool. Experts omit it, so hand-offs go through the orchestrator.
 - The body is the system prompt: role, responsibilities, owned paths, decisions in force,
   working method, output format with a `Handoff` block, definition of done.
+- Every agent has a `## Before you answer` section (read all of `knowledge/<id>/`, prefer it over memory) and a
+  `knowledge/<id>/` folder with `docs/` (official-source notes, each with a link) and `examples/` (tested worked examples).
+  Check with `node --test knowledge/agent-architect/examples/validate-team.test.ts`.
 - Keep the `skills` list to what the matrix in `docs/expert-roster.md` §3 says; every listed skill costs context.
 
 ## Skill file (`.claude/skills/<name>/SKILL.md`)

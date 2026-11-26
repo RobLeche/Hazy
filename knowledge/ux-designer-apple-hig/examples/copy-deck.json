@@ -1,0 +1,6 @@
+{
+  "buttons": ["Use my location", "Search places", "Try again", "Approve & deploy", "Ask to revise", "Cancel", "Clear recent", "Sign in"],
+  "headlines": ["Storms likely this afternoon", "Flooding possible on low roads tonight", "Dangerous flooding possible this evening", "No storms expected today"],
+  "errors": ["Couldn't load the outlook.", "Location is off. Search for a place instead.", "The code changed since this proposal. Ask storm-scorer to update it.", "Too many requests. Try again in a minute."],
+  "footer": "Hazy is not a warning service. For official alerts, see weather.gov. Weather data by Open-Meteo.com"
+}

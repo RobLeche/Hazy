@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Hazy Outlook</title>
+<style>
+  :root { --bg:#ffffff; --fg:#1c1c1e; --badge-bg:#b3261e; --badge-fg:#ffffff; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#000000; --fg:#f2f2f7; } }
+  body { background:var(--bg); color:var(--fg); font: 17px/1.3 system-ui, sans-serif; margin: 16px; }
+  .badge { background:var(--badge-bg); color:var(--badge-fg); padding:4px 8px; border-radius:8px; }
+  button { min-width:44px; min-height:44px; }
+</style></head>
+<body>
+<main>
+  <h1>Outlook</h1>
+  <button id="locate">Use my location</button>
+  <p role="status" id="status">Pick a place to see the outlook.</p>
+  <p><span class="badge" id="flood" hidden></span></p>
+</main>
+<script>
+document.getElementById('locate').addEventListener('click', () => {
+  navigator.geolocation.getCurrentPosition(async (pos) => {
+    const { latitude, longitude } = pos.coords;
+    const res = await fetch(`/api/outlook?lat=${latitude.toFixed(2)}&lon=${longitude.toFixed(2)}`);
+    const o = await res.json();
+    document.getElementById('status').textContent = `${o.place}: ${o.headline}`;
+    const b = document.getElementById('flood'); b.textContent = `Flood: ${o.flood}`; b.hidden = false;
+  }, () => { document.getElementById('status').textContent = 'Location is off. Search for a place instead.'; });
+});
+</script>
+</body></html>
