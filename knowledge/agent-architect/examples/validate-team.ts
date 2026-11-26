@@ -25,7 +25,7 @@ export function validateTeam(root: string): string[] {
   const errs: string[] = [];
   const agentsDir = join(root, ".claude/agents"); const skillsDir = join(root, ".claude/skills");
   const skillNames = new Set(readdirSync(skillsDir));
-  const used = new Set<string>();
+  const used = new Set<string>(); const firstNames = new Set<string>();
   for (const file of readdirSync(agentsDir).filter((f) => f.endsWith(".md"))) {
     const id = file.replace(/\.md$/, "");
     const { fm, body } = frontmatter(readFileSync(join(agentsDir, file), "utf8"));
@@ -34,6 +34,10 @@ export function validateTeam(root: string): string[] {
     if (!MODELS.has(String(fm.model))) errs.push(`${id}: unknown model alias ${fm.model}`);
     if (fm.color && !COLORS.has(String(fm.color))) errs.push(`${id}: invalid color`);
     if (!fm.personality) errs.push(`${id}: personality missing (Agent Console shows it)`);
+    if (!fm.firstName) errs.push(`${id}: firstName missing`);
+    else if (firstNames.has(String(fm.firstName))) errs.push(`${id}: firstName ${fm.firstName} already used`); else firstNames.add(String(fm.firstName));
+    if (!/^## Personality/m.test(body)) errs.push(`${id}: missing "## Personality" section`);
+    if (fm.model === "opus" && fm.effort !== "high") errs.push(`${id}: opus agents run at effort high (Opus 5.5 defaults to medium)`);
     const tools = String(fm.tools ?? "").split(",").map((t) => t.trim());
     if (tools.includes("Agent") !== (id === "orchestrator")) errs.push(`${id}: only the orchestrator may have the Agent tool`);
     const skills = (fm.skills as string[]) ?? [];

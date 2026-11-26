@@ -12,12 +12,12 @@
 | # | Agent id (file name) | Persona | Model | Job (one line) |
 |---|---|---|---|---|
 | 1 | `orchestrator` | Calm project lead; plans, delegates, never codes alone | opus | Runs the team: turns goals into tasks, routes each one to the right expert, sequences hand-offs, tracks done/blocked, and decides when work is ready to ship. |
-| 2 | `agent-architect` (meta agent) | Reflective coach; evidence-driven edits to prompts | opus | Builds and improves the agents themselves: writes and revises `.claude/agents/*.md`, tunes prompts, models and tools, and fixes gaps found in reviews. |
+| 2 | `agent-architect` (meta agent) | Reflective coach; evidence-driven edits to prompts | sonnet | Builds and improves the agents themselves: writes and revises `.claude/agents/*.md`, tunes prompts, models and tools, and fixes gaps found in reviews. |
 | 3 | `software-architect` | Pragmatic minimalist; writes short ADRs | opus | Owns the overall design (module boundaries, data contracts, repo layout, ADRs) and keeps it static-first and within Netlify's limits. |
 | 4 | `api-integration-expert` | Meticulous about schemas, units and nulls | sonnet | Integrates the Open-Meteo forecast, marine, flood and geocoding APIs and the NWS alerts API: requests, parsing, caching, quotas and attribution. |
 | 5 | `pwa-mobile-expert` | Phone-in-hand tester; obsessed with offline | sonnet | Builds the installable mobile front end: manifest, icons, service worker, offline and update flow, install prompts on iOS and Android, and performance. |
 | 6 | `security-expert` | Skeptical red-teamer; assumes breach | opus | Threat-models and reviews everything: password gate, sessions, CSRF/CSP, secrets, the scoped GitHub token, the path allow-list and prompt-injection defences. |
-| 7 | `agent-console-engineer` | Careful builder; "nothing commits without a click" | sonnet | Builds the Agent Console: agent list, streaming chat via the Claude API, tool loop, proposals, diff review, and approval commits to GitHub, all from Netlify Functions. |
+| 7 | `agent-console-engineer` | Careful builder; "nothing commits without a click" | opus | Builds the Agent Console: agent list, streaming chat via the Claude API, tool loop, proposals, diff review, and approval commits to GitHub, all from Netlify Functions. |
 | 8 | `ui-designer-apple-liquid-glass` | **Sable**: refined visual designer; translucency, depth, restraint | sonnet | Designs the Apple-style "Liquid Glass" visual language: colour, materials, type, icons, risk badges and motion, in light and dark, with legible contrast. |
 | 9 | `ux-designer-apple-hig` | **Wren**: empathetic interaction designer; plain words, clear flows | sonnet | Designs flows and interactions to Apple's Human Interface Guidelines: place search, the daily outlook, alerts, install hints, console review, copy and accessibility. |
 | 10 | `qa-engineer` | Relentless edge-case hunter | sonnet | Owns test strategy and gates: unit, contract, function, end-to-end (mobile and offline), security and accessibility tests, and release sign-off. |
@@ -40,6 +40,8 @@ overstates an unofficial score. Without this role, the score is guesswork.
 | Native iOS/Android (Capacitor) | Out of scope by decision (PWA only); revisit if the app needs store presence |
 | Product manager | You lead; the orchestrator handles planning and tracking |
 | Technical writer | Docs are shared by the orchestrator, architect and meta agent |
+
+> Names, models and personalities: see [agent-brains.md](agent-brains.md) (Juno, Vera, Rook, Theo, Ezra, Milo, Skye, Pip, Sable, Wren, Petra, Nell).
 
 ## 2. Skills and who shares them
 

@@ -15,6 +15,8 @@ Frontmatter fields (Claude Code docs; camelCase, exact spelling, unknown keys ar
 `permissionMode`, `maxTurns`, `memory`, `color`, `isolation: worktree`, `background`, `hooks`, `mcpServers`.
 
 Hazy conventions:
+- `firstName:` and `personality:` are our own keys (also a `## Personality` section in the body); models per `docs/agent-brains.md`
+  (opus + `effort: high` for hard, costly reasoning; sonnet for everyday engineering and design; haiku for small, well-defined jobs).
 - `personality:` is our own key. Claude Code ignores it; the Agent Console shows it.
 - Only `orchestrator` lists the `Agent` tool. Experts omit it, so hand-offs go through the orchestrator.
 - The body is the system prompt: role, responsibilities, owned paths, decisions in force,

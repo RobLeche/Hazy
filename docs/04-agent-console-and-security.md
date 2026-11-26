@@ -43,7 +43,7 @@ You are the scoring specialist for Hazy...
   `inherit`/missing → `claude-opus-5-5` (the current default). Full IDs pass
   through only if they are on an allow-list of known IDs.
 - Build step `scripts/build-agents.ts` parses the frontmatter and emits
-  `agents.json` with `{ id, name, model, modelId, personality, description }`.
+  `agents.json` with `{ id, name, firstName, model, modelId, personality, description }` (see `docs/agent-brains.md`).
   Do **not** ship system-prompt bodies to the browser. Functions read them from
   the bundled `.claude/agents` (`included_files`). If the repo is public the
   prompts are public anyway, but the console should still not be a prompt API.

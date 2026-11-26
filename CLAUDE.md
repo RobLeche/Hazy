@@ -18,20 +18,22 @@ Twelve project subagents live in `.claude/agents/`. Their skills live in
 `.claude/skills/<skill>/SKILL.md` and are preloaded into each agent through
 its `skills:` field. The full roster and skill matrix are in `docs/expert-roster.md`.
 
-| Agent | Role |
-|---|---|
-| `orchestrator` | Runs the team: plans, delegates, routes hand-offs, reports |
-| `agent-architect` | Meta agent: builds and improves the agents and skills |
-| `software-architect` | Design, boundaries, contracts, ADRs |
-| `api-integration-expert` | Open-Meteo (forecast, marine, flood, geocoding) and NWS alerts |
-| `meteorology-risk-analyst` | Thunderstorm and flood scoring, calibration, risk wording |
-| `pwa-mobile-expert` | Front end, manifest, service worker, offline, install, performance |
-| `ui-designer-apple-liquid-glass` (**Sable**) | Liquid Glass visual design, tokens, icons |
-| `ux-designer-apple-hig` (**Wren**) | HIG flows, interactions, copy, accessibility design |
-| `agent-console-engineer` | Agent Console: Claude API chat, proposals, approve-to-main commits |
-| `netlify-engineer` | `netlify.toml`, Functions config, Blobs, env vars, headers, rate limits, deploys |
-| `security-expert` | Threat model, security reviews, PAT, path policy |
-| `qa-engineer` | Tests and release sign-off |
+| Agent | Name · model | Role |
+|---|---|---|
+| `orchestrator` | Juno · opus | Runs the team: plans, delegates, routes hand-offs, reports |
+| `agent-architect` | Ezra · sonnet | Meta agent: builds and improves the agents and skills |
+| `software-architect` | Vera · opus | Design, boundaries, contracts, ADRs |
+| `api-integration-expert` | Milo · sonnet | Open-Meteo (forecast, marine, flood, geocoding) and NWS alerts |
+| `meteorology-risk-analyst` | Skye · sonnet | Thunderstorm and flood scoring, calibration, risk wording |
+| `pwa-mobile-expert` | Pip · sonnet | Front end, manifest, service worker, offline, install, performance |
+| `ui-designer-apple-liquid-glass` | Sable · sonnet | Liquid Glass visual design, tokens, icons |
+| `ux-designer-apple-hig` | Wren · sonnet | HIG flows, interactions, copy, accessibility design |
+| `agent-console-engineer` | Theo · opus | Agent Console: Claude API chat, proposals, approve-to-main commits |
+| `netlify-engineer` | Nell · sonnet | `netlify.toml`, Functions config, Blobs, env vars, headers, rate limits, deploys |
+| `security-expert` | Rook · opus | Threat model, security reviews, PAT, path policy |
+| `qa-engineer` | Petra · sonnet | Tests and release sign-off |
+
+Names, models and personalities, and why each model was chosen: `docs/agent-brains.md`.
 
 ## How the team works
 
