@@ -1,0 +1,11 @@
+{
+  "_synthetic": "Hand-built for tests, NOT a recorded Open-Meteo response. Fields follow docs/01 section 2.4.",
+  "results": [
+    { "id": 1, "name": "Tampa", "latitude": 27.94752, "longitude": -82.45843, "elevation": 14, "country_code": "US", "admin1": "Florida", "admin2": "Hillsborough County", "timezone": "America/New_York", "population": 400000 },
+    { "id": 2, "name": "Tampa", "latitude": 38.5, "longitude": -97.15, "country_code": "US", "admin1": "Kansas", "admin2": "Marion County", "timezone": "America/Chicago", "population": 100 },
+    { "id": 3, "name": "Tampa Bay Estates", "latitude": 27.8, "longitude": -82.5, "country_code": "US", "timezone": "America/New_York" },
+    { "id": 4, "name": "Tampa", "latitude": 19.4, "longitude": -99.1, "country_code": "MX", "admin1": "Mexico City", "timezone": "America/Mexico_City" },
+    { "id": 5, "name": "Broken row", "latitude": 999, "longitude": 0, "country_code": "US", "timezone": "America/New_York" }
+  ],
+  "generationtime_ms": 0.5
+}
