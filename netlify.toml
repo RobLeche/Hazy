@@ -1,0 +1,22 @@
+# Hazy: static PWA + Netlify Functions (D-001). Free plan (D-003).
+# Tests run in the build, so a failing commit never publishes (matters because of D-002).
+[build]
+  command = "npm run typecheck && npm test && npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+  # Functions read agent prompts at runtime.
+  included_files = [".claude/agents/**"]
+
+# Rate-limit rules for functions live in each function's `config` (not supported here).
+# Static-file headers (CSP etc.) are in public/_headers; function responses set their own headers.
+# sw.js must always revalidate so updates ship. (Duplicated in _headers on purpose; both are static files.)
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "no-cache"

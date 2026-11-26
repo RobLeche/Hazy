@@ -1,0 +1,341 @@
+{
+  "_meta": {
+    "version": "1.0.0",
+    "owner": "ux-designer-apple-hig (Wren); risk wording co-owned with meteorology-risk-analyst (Skye)",
+    "rules": [
+      "Every button label starts with a verb, is in sentence case and is 24 characters or fewer.",
+      "Headlines start with the hazard, are 40 characters or fewer when {when} is filled in, contain no digits with % and no jargon.",
+      "Errors are full sentences that end with a period, neutral in tone and say what to do next.",
+      "Jargon (CAPE, lifted index) appears only under why.technical*, never in the main view.",
+      "Never write an official-sounding warning: only NWS text is shown as a warning, and it is labelled National Weather Service."
+    ],
+    "placeholders": "{when} {time} {place} {query} {n} {day} {weekday} {level} {firstName} {model} {personality} {id} {sha} {files} {added} {removed} {reason} {count} {minutes} {tz} {event} {until} {state} {resetTime} {headline}",
+    "pluralisation": "Use files.one for a count of 1 and files.other otherwise.",
+    "lint": "docs/design/ux/copy-deck.test.ts (reuses knowledge/ux-designer-apple-hig/examples/copy-lint.ts)"
+  },
+
+  "tabs": {
+    "outlook": "Outlook",
+    "places": "Places",
+    "settings": "Settings",
+    "alertBadgeSr": "Active weather alert",
+    "navLabel": "Main"
+  },
+
+  "buttons": {
+    "useLocation": "Use my location",
+    "searchPlaces": "Search places",
+    "changePlace": "Change place",
+    "tryAgain": "Try again",
+    "refresh": "Refresh",
+    "viewDetails": "View details",
+    "hideDetails": "Hide details",
+    "clearRecent": "Clear recent",
+    "savePlace": "Save place",
+    "removePlace": "Remove place",
+    "undo": "Undo",
+    "chooseState": "Choose state",
+    "installApp": "Install app",
+    "dismiss": "Dismiss",
+    "reloadApp": "Refresh",
+    "signIn": "Sign in",
+    "signOut": "Sign out",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "staySignedIn": "Stay signed in",
+    "send": "Send",
+    "stop": "Stop",
+    "continue": "Continue",
+    "runBackground": "Run as background job",
+    "cancel": "Cancel",
+    "reject": "Reject",
+    "askToRevise": "Ask to revise",
+    "approveDeploy": "Approve & deploy",
+    "viewCommit": "View commit",
+    "viewPreviousDeploy": "View previous deploy",
+    "nextFile": "Go to next file",
+    "previousFile": "Go to previous file",
+    "openConsole": "Open console"
+  },
+
+  "headlines": {
+    "when": {
+      "morning": "this morning",
+      "afternoon": "this afternoon",
+      "evening": "this evening",
+      "night": "tonight",
+      "today": "today",
+      "tomorrow": "tomorrow"
+    },
+    "thunder": {
+      "none": "No storms expected {when}",
+      "low": "Storms unlikely {when}",
+      "possible": "Storms possible {when}",
+      "likely": "Storms likely {when}",
+      "veryLikely": "Storms very likely {when}"
+    },
+    "flood": {
+      "nonthreatening": "No flooding expected {when}",
+      "veryLow": "Flooding unlikely {when}",
+      "low": "Flooding unlikely {when}",
+      "moderate": "Flooding possible {when}",
+      "high": "Flooding likely {when}",
+      "extreme": "Flooding very likely {when}"
+    },
+    "howToChoose": "Show the hazard with the higher level. If equal, show thunder. If both are none, use thunder.none."
+  },
+
+  "levels": {
+    "thunder": {
+      "none": "None",
+      "low": "Low",
+      "possible": "Possible",
+      "likely": "Likely",
+      "veryLikely": "Very likely"
+    },
+    "flood": {
+      "nonthreatening": "None",
+      "veryLow": "Very low",
+      "low": "Low",
+      "moderate": "Moderate",
+      "high": "High",
+      "extreme": "Extreme"
+    }
+  },
+
+  "badges": {
+    "thunder": "Thunder: {level}",
+    "flood": "Flood: {level}",
+    "thunderSr": "Thunderstorm risk: {level}",
+    "floodSr": "Flood risk: {level}",
+    "raisedByNws": "Raised by a National Weather Service alert",
+    "severeChip": "Strong gusts or hail possible"
+  },
+
+  "advice": {
+    "lightning": "When thunder roars, go indoors.",
+    "flood": "Turn Around, Don't Drown."
+  },
+
+  "outlook": {
+    "title": "Outlook",
+    "sourceLabel": "Hazy outlook, not an official warning",
+    "updated": "Updated {time}",
+    "updatedJustNow": "Updated just now",
+    "updating": "Updating…",
+    "updatedDone": "Outlook updated.",
+    "placeLine": "{place} · times in {tz}",
+    "todaySection": "Today",
+    "nextDaysSection": "Next days",
+    "dayRowSr": "{weekday}. {thunderSr}. {floodSr}.",
+    "dayDetailTitle": "{weekday}",
+    "outsideUsNote": "Official alerts are available for US locations.",
+    "alertsNone": "No active National Weather Service alerts.",
+    "alertsHeading": "National Weather Service alerts",
+    "marineTitle": "Sea conditions",
+    "marineWaves": "Waves up to {height}",
+    "marineWater": "Water temperature {temp}",
+    "marineNote": "A rough estimate for coastal waters. It is not a beach or boating forecast.",
+    "refreshSr": "Refresh outlook"
+  },
+
+  "banners": {
+    "nws": "National Weather Service: {event} until {until}",
+    "nwsMore": "and {n} more",
+    "nwsSource": "Source: National Weather Service",
+    "offline": "You're offline. Showing the outlook from {time}.",
+    "backOnline": "You're back online.",
+    "staleAfterError": "Couldn't update. Showing the outlook from {time}.",
+    "swUpdate": "A new version of Hazy is ready."
+  },
+
+  "empty": {
+    "firstRunTitle": "Pick a place",
+    "firstRunBody": "See if storms or flooding are likely where you are.",
+    "recentNone": "Places you look up will show here.",
+    "savedNone": "Save a place to see it here.",
+    "noResultsTitle": "No places found",
+    "noResults": "No places match \"{query}\" in {state}. Check the spelling or try another state.",
+    "searchHint": "Type a city or town name.",
+    "outsideUsTitle": "Outside the United States",
+    "outsideUsBody": "Hazy's outlook still works here, but official alerts are only available for US locations."
+  },
+
+  "errors": {
+    "outlookLoad": "Couldn't load the outlook.",
+    "outlookOfflineNoCache": "You're offline, and there's no outlook stored for this place yet.",
+    "alertsOffline": "Can't check alerts offline.",
+    "alertsLoad": "Couldn't check for alerts. For official alerts, see weather.gov.",
+    "locationDenied": "Location is off. Search for a place instead.",
+    "locationUnavailable": "Couldn't find your location. Search for a place instead.",
+    "searchLoad": "Couldn't search for places. Try again.",
+    "searchOffline": "You're offline. Search needs a connection, but your recent and saved places still work.",
+    "marineUnavailable": "Sea conditions aren't available right now.",
+    "loginWrong": "That password didn't work. Try again.",
+    "loginLocked": "Too many tries. Wait 15 minutes, then try again.",
+    "rateLimited": "Too many requests. Try again in a minute.",
+    "sessionExpired": "Your session ended. Sign in again to continue.",
+    "sessionExpiredApprove": "Your session ended. Sign in again to approve.",
+    "consoleOffline": "The Agent Console needs a connection.",
+    "agentsLoad": "Couldn't load the agents.",
+    "proposalLoad": "Couldn't load this proposal.",
+    "staleBase": "The code changed since this proposal. Ask {firstName} to update it.",
+    "pathRefused": "This proposal edits files agents can't change. Ask {firstName} for a version without them.",
+    "budgetExhausted": "Today's agent budget is used up. Try again tomorrow.",
+    "budgetExhaustedAt": "Today's agent budget is used up. Chat opens again at {resetTime}.",
+    "claudeBusy": "Claude is busy right now. Try again in a moment.",
+    "streamDropped": "The connection dropped before {firstName} finished.",
+    "refusal": "{firstName} can't help with that request. Try asking another way.",
+    "jobFailed": "The background job stopped. Nothing was changed.",
+    "commitFailed": "Couldn't commit these changes. Nothing was published. Try again.",
+    "alreadyHandled": "This proposal was already {state}."
+  },
+
+  "status": {
+    "loadingOutlook": "Loading the outlook…",
+    "findingLocation": "Finding your location…",
+    "searching": "Searching…",
+    "signingIn": "Signing in…",
+    "loadingAgents": "Loading agents…",
+    "replying": "{firstName} is replying…",
+    "replyDone": "{firstName} finished replying.",
+    "stopped": "Stopped.",
+    "paused": "{firstName} needs more time to finish.",
+    "pausedHelp": "Continue here, or run it as a background job (up to 15 minutes).",
+    "jobQueued": "Queued",
+    "jobRunning": "Working in the background…",
+    "jobDone": "Background job finished.",
+    "jobPaused": "The background job needs more time.",
+    "approving": "Approving…",
+    "committed": "Committed {sha}. Netlify is now building the site.",
+    "committedHelp": "If the build or tests fail, the live site stays on the previous deploy.",
+    "rejected": "Proposal rejected. Nothing was changed.",
+    "sessionWarning": "Your session ends in {minutes} minutes.",
+    "removedPlace": "Removed {place}.",
+    "clearedRecent": "Recent places cleared."
+  },
+
+  "places": {
+    "title": "Places",
+    "searchLabel": "Search places",
+    "searchPlaceholder": "City or town",
+    "scopeChip": "{state}",
+    "scopeSr": "Searching in {state}. Choose state to change it.",
+    "defaultState": "Florida",
+    "recentHeading": "Recent",
+    "savedHeading": "Saved",
+    "resultsHeading": "Results",
+    "currentLocationName": "Current location",
+    "recentPrivacy": "Recent places stay on this device.",
+    "placeRowSr": "{place}",
+    "saveSr": "Save {place}",
+    "removeSr": "Remove {place}"
+  },
+
+  "settings": {
+    "title": "Settings",
+    "unitsHeading": "Units",
+    "unitsImperial": "Imperial (°F, mph, in)",
+    "unitsMetric": "Metric (°C, km/h, mm)",
+    "appearanceHeading": "Appearance",
+    "appearanceSystem": "Match device",
+    "appearanceLight": "Light",
+    "appearanceDark": "Dark",
+    "installHeading": "Install",
+    "aboutHeading": "About",
+    "consoleRow": "Agent Console",
+    "consoleRowHelp": "For the project team. Password needed.",
+    "aboutAttribution": "Weather data by Open-Meteo.com (CC BY 4.0).",
+    "aboutAlerts": "Alerts come from the National Weather Service.",
+    "aboutNonCommercial": "Hazy is a free, non-commercial project.",
+    "aboutDisclaimer": "Hazy is not a warning service. For official alerts, see weather.gov.",
+    "versionLine": "Version {version}"
+  },
+
+  "install": {
+    "iosTitle": "Add Hazy to your Home Screen",
+    "iosBody": "Tap Share, then Add to Home Screen.",
+    "androidTitle": "Install Hazy",
+    "androidBody": "Open it like an app, even with a weak signal.",
+    "shareIconSr": "the Share button"
+  },
+
+  "why": {
+    "title": "Why?",
+    "intro": "Here is what the forecast shows for {day}.",
+    "modelNote": "Hazy's outlook is based on forecast data and simple rules. It can be wrong.",
+    "technicalTitle": "Technical details",
+    "technicalCape": "Convective energy (CAPE): {value} J/kg",
+    "technicalLifted": "Lifted index: {value}",
+    "technicalRain": "Peak rain rate: {value}",
+    "technicalTotal": "Rain total: {value}"
+  },
+
+  "footer": {
+    "warning": "Hazy is not a warning service. For official alerts, see weather.gov.",
+    "attribution": "Weather data by Open-Meteo.com",
+    "full": "Hazy is not a warning service. For official alerts, see weather.gov. Weather data by Open-Meteo.com",
+    "weatherGovUrl": "https://www.weather.gov/",
+    "openMeteoUrl": "https://open-meteo.com/",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+  },
+
+  "console": {
+    "title": "Agent Console",
+    "backToSettings": "Settings",
+    "backToAgents": "Agents",
+    "loginIntro": "Sign in to chat with the Hazy team's agents.",
+    "passwordLabel": "Password",
+    "agentsTitle": "Agents",
+    "agentCount": "{count} agents",
+    "agentCardSr": "{firstName}, {model} model. {personality}",
+    "modelLabel": "{model} model",
+    "models": {
+      "opus": "Opus",
+      "sonnet": "Sonnet",
+      "haiku": "Haiku",
+      "fable": "Fable",
+      "inherit": "Default"
+    },
+    "composerLabel": "Message {firstName}",
+    "chatEmpty": "Ask {firstName} a question or describe a change you want.",
+    "jobHeading": "Background job",
+    "proposalCardTitle": "Proposal {id}",
+    "files": { "one": "1 file", "other": "{n} files" },
+    "diffStat": "{files} · +{added} −{removed}",
+    "pills": {
+      "pending": "Needs review",
+      "approving": "Approving",
+      "committed": "Committed",
+      "rejected": "Rejected",
+      "failed": "Not committed"
+    },
+    "sheetTitle": "Change from {firstName}",
+    "sheetSubtitle": "{files} · +{added} −{removed} · Proposal {id}",
+    "deployTarget": "Publishes to production (main).",
+    "viewedFiles": "You've opened {n} of {total} files.",
+    "fileActions": { "create": "Added file", "update": "Changed file", "delete": "Deleted file" },
+    "refusedHeading": "Files agents can't change",
+    "refusedItem": "{path}: {reason}",
+    "refusedReasons": {
+      "denied": "Server, security or build files need a person to change them.",
+      "outside": "This folder isn't one agents can edit.",
+      "invalid": "This path isn't valid.",
+      "secret": "The new content looks like a secret."
+    },
+    "diffAdded": "added",
+    "diffRemoved": "removed",
+    "diffLine": "Line {n}",
+    "wrapLines": "Wrap long lines",
+    "confirmTitle": "Deploy these changes?",
+    "confirmMessage": "This commits {files} to main and publishes the live site in about 1–2 minutes. You can restore the previous deploy from Netlify.",
+    "confirmFrom": "From {firstName} · Proposal {id}"
+  },
+
+  "labels": {
+    "appName": "Hazy",
+    "loadingSr": "Loading",
+    "currentPlaceSr": "Current place: {place}",
+    "closeSr": "Close"
+  }
+}

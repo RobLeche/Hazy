@@ -1,0 +1,10 @@
+{
+  "_synthetic": "Hand-built for tests, NOT a recorded response; shape assumed.",
+  "latitude": 27.95, "longitude": -82.45, "utc_offset_seconds": -18000, "timezone": "America/New_York",
+  "daily": {
+    "time": ["2026-11-25", "2026-11-26", "2026-11-27", "2026-11-28"],
+    "river_discharge": [10.0, 30.0, 60.0, null],
+    "river_discharge_p75": [20.0, 20.0, 20.0, 20.0],
+    "river_discharge_max": [80.0, 80.0, 55.0, 80.0]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "name": "hazy",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "node scripts/build-agents.ts && vite build",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:e2e": "playwright test --trace off",
+    "lint": "npm run typecheck"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "1.14.0",
+    "@netlify/blobs": "11.1.11",
+    "@netlify/functions": "6.1.2"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.14.1",
+    "@playwright/test": "1.63.0",
+    "@types/node": "22.20.7",
+    "playwright": "1.63.0",
+    "typescript": "7.0.2",
+    "vite": "8.3.8",
+    "vitest": "5.1.2"
+  }
+}
