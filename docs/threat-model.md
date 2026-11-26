@@ -487,7 +487,7 @@ list in CLAUDE.md and doc 04 §7.1, so the orchestrator should record it as a de
 
 ## 11. Acceptance checklist (verified by security-expert in the Wave 3 review)
 
-Each item must be shown by code at the named location **and** a passing test in `tests/security/**` (or the named manual check).
+Item *n* is referred to elsewhere as **AC-*n***. Each item must be shown by code at the named location **and** a passing test in `tests/security/**` (or the named manual check).
 
 **Secrets and config**
 1. `ANTHROPIC_API_KEY`, `GITHUB_TOKEN`, `SESSION_SECRET` and `CONSOLE_PASSWORD_HASH` are read only in `netlify/**`; `grep -rE "process\.env|import\.meta\.env" src/` finds no secret names.
