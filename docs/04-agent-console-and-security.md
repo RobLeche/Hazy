@@ -2,6 +2,9 @@
 
 > Part of the Hazy research pack. See [README](README.md) for the index.
 
+> **Decisions in force** ([decisions.md](decisions.md)): approvals commit straight to `main` (D-002),
+> Netlify Free plan (D-003), fine-grained PAT (D-004).
+
 ## 1. What it is
 
 A page inside the deployed app, `/console`, that:
@@ -31,12 +34,12 @@ You are the scoring specialist for Hazy...
 (the body is the system prompt)
 ```
 
-- `name`, `description`, `model`, `tools` are Claude Code subagent fields.
-  `personality` is **our own extra field** for the console card. Claude Code
-  ignores unknown keys (verify this against the Claude Code subagent docs when
-  building). If `personality` is missing, show `description`.
+- `name`, `description`, `model`, `tools`, `skills` are Claude Code subagent fields.
+  `personality` is **our own extra field** for the console card. The Claude Code
+  docs confirm it "ignores a field it doesn't recognize without reporting an
+  error". If `personality` is missing, show `description`.
 - **Model mapping** (server-side, in one place):
-  `opus → claude-opus-5-5`, `sonnet → claude-sonnet-5-5`, `haiku → claude-haiku-5-5`,
+  `opus → claude-opus-5-5`, `sonnet → claude-sonnet-5-5`, `haiku → claude-haiku-5-5`, `fable → claude-fable-5-2`,
   `inherit`/missing → `claude-opus-5-5` (the current default). Full IDs pass
   through only if they are on an allow-list of known IDs.
 - Build step `scripts/build-agents.ts` parses the frontmatter and emits
@@ -305,9 +308,8 @@ Create a **fine-grained personal access token**:
 - If the repo is owned by an organisation that requires approval, the token
   stays `pending` (read-only on public resources) until an admin approves it.
 - Store it only in Netlify env vars (Functions scope, secret). Never in the repo.
-- If you later want more isolation, a GitHub App with Contents permission on
-  one repo gives short-lived installation tokens. That is the upgrade path; it is
-  not researched in detail here.
+- **Decided (D-004): fine-grained PAT.** A GitHub App (short-lived installation
+  tokens) was considered and deferred until more people use the console.
 
 ## 8. Rate limits and quotas summary
 

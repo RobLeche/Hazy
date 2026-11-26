@@ -204,3 +204,50 @@ Columns: **Orc** orchestrator · **Meta** agent-architect · **Arch** software-a
 | `docs/**` | orchestrator, software-architect |
 | `netlify/**`, `netlify.toml`, `public/_headers` | netlify-engineer and agent-console-engineer; security-expert review required; **human commits only** |
 | `.claude/agents/**` | agent-architect; **human commits only** |
+
+## 5. Implementation in this repo
+
+Each agent is built as `.claude/agents/<agent-id>.md` (a Claude Code project subagent), and each skill as `.claude/skills/<skill-id>/SKILL.md`. Every agent preloads its skills through the `skills:` frontmatter field, exactly as in the matrix above. Only `orchestrator` has the `Agent` tool; experts return a `Handoff` block. See [../CLAUDE.md](../CLAUDE.md).
+
+| Skill id | Lead | Shared with |
+|---|---|---|
+| `accessibility-testing` | qa-engineer | ux-designer-apple-hig, ui-designer-apple-liquid-glass |
+| `accessibility-wcag` | ux-designer-apple-hig | ui-designer-apple-liquid-glass, pwa-mobile-expert, qa-engineer, agent-console-engineer |
+| `agent-authoring` | agent-architect | orchestrator, agent-console-engineer |
+| `agent-evaluation` | agent-architect | orchestrator, qa-engineer |
+| `agent-safety-prompt-injection` | security-expert | agent-console-engineer, agent-architect |
+| `agent-tool-loops` | agent-console-engineer | software-architect, netlify-engineer |
+| `architecture-decisions` | software-architect | orchestrator, security-expert, netlify-engineer |
+| `claude-messages-api` | agent-console-engineer | agent-architect, security-expert |
+| `design-tokens-components` | ui-designer-apple-liquid-glass | pwa-mobile-expert, ux-designer-apple-hig |
+| `diff-review-ux` | ux-designer-apple-hig | agent-console-engineer, ui-designer-apple-liquid-glass |
+| `fine-grained-pat` | security-expert | agent-console-engineer, netlify-engineer |
+| `function-testing-mocks` | qa-engineer | agent-console-engineer, netlify-engineer |
+| `github-git-data-api` | agent-console-engineer | security-expert, netlify-engineer |
+| `headers-csp-cdn` | netlify-engineer | security-expert, pwa-mobile-expert |
+| `hig-interaction-design` | ux-designer-apple-hig | ui-designer-apple-liquid-glass, pwa-mobile-expert |
+| `liquid-glass-visual-design` | ui-designer-apple-liquid-glass | ux-designer-apple-hig, pwa-mobile-expert |
+| `mobile-e2e-testing` | qa-engineer | pwa-mobile-expert |
+| `mobile-front-end` | pwa-mobile-expert | ui-designer-apple-liquid-glass, ux-designer-apple-hig |
+| `netlify-blobs` | agent-console-engineer | netlify-engineer, software-architect |
+| `netlify-config-deploys` | netlify-engineer | orchestrator, qa-engineer |
+| `netlify-env-secrets` | netlify-engineer | security-expert, agent-console-engineer |
+| `netlify-functions` | netlify-engineer | agent-console-engineer, api-integration-expert, software-architect |
+| `nws-alerts` | api-integration-expert | meteorology-risk-analyst, netlify-engineer |
+| `open-meteo-apis` | api-integration-expert | meteorology-risk-analyst, qa-engineer |
+| `planning-and-routing` | orchestrator | agent-architect, software-architect |
+| `pwa-installability` | pwa-mobile-expert | ux-designer-apple-hig, qa-engineer |
+| `quota-and-cost` | netlify-engineer | api-integration-expert, agent-console-engineer |
+| `rate-limiting` | netlify-engineer | security-expert, agent-console-engineer |
+| `release-signoff` | qa-engineer | orchestrator, netlify-engineer |
+| `risk-communication` | meteorology-risk-analyst | ux-designer-apple-hig, ui-designer-apple-liquid-glass |
+| `security-testing` | qa-engineer | security-expert |
+| `service-worker-offline` | pwa-mobile-expert | api-integration-expert, netlify-engineer, qa-engineer |
+| `supply-chain-hygiene` | security-expert | netlify-engineer, software-architect |
+| `technical-writing` | orchestrator | agent-architect, software-architect, ux-designer-apple-hig |
+| `threat-modeling` | security-expert | software-architect, agent-console-engineer |
+| `typescript-strict` | software-architect | api-integration-expert, pwa-mobile-expert, agent-console-engineer, netlify-engineer, qa-engineer, meteorology-risk-analyst |
+| `unit-contract-testing` | qa-engineer | meteorology-risk-analyst, api-integration-expert, agent-console-engineer |
+| `weather-risk-scoring` | meteorology-risk-analyst | api-integration-expert, qa-engineer |
+| `web-app-security` | security-expert | agent-console-engineer, netlify-engineer, qa-engineer |
+| `web-performance` | pwa-mobile-expert | netlify-engineer, qa-engineer |

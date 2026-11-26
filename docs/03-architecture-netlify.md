@@ -2,6 +2,9 @@
 
 > Part of the Hazy research pack. See [README](README.md) for the index.
 
+> **Decisions in force** ([decisions.md](decisions.md)): D-001 static + Functions only,
+> D-002 approve → `main`, D-003 Netlify Free plan (2 rate-limit rules), D-004 fine-grained PAT.
+
 ## 1. Overview
 
 ```
@@ -173,9 +176,9 @@ the browser bundle):
    (continuous deployment: each push to `main` builds and publishes).
 2. Approving a proposal creates one commit on `main` through the GitHub API, and
    Netlify builds it automatically. **No Netlify token is needed in the app.**
-3. Optional safety net: approve into a branch `agent/<proposalId>` and let a
-   **branch deploy / Deploy Preview** build it first, then merge. This trades
-   a second click for a chance to look before production.
+3. **Decided (D-002): approvals commit straight to `main`.** The branch +
+   Deploy Preview flow was considered and rejected. Make `npm test` part of the
+   build command, so a failing commit never publishes.
 4. Rollback: Netlify's "Publish deploy" on a previous deploy (instant), or a revert commit.
 
 ## 8. Build vs no-build

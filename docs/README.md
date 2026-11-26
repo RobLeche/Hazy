@@ -18,7 +18,8 @@ the app. Each file covers one topic and ends with its sources.
 | 3 | [03-architecture-netlify.md](03-architecture-netlify.md) | Static site + Netlify Functions, limits, Blobs, caching, env vars, deploy flow |
 | 4 | [04-agent-console-and-security.md](04-agent-console-and-security.md) | Agent Console design, password gate, scoped GitHub token, path allow-list, approval → commit → redeploy, long jobs |
 | 5 | [05-testing-and-accessibility.md](05-testing-and-accessibility.md) | Unit, contract, function, e2e and security tests; WCAG 2.2 AA checklist |
-| — | [expert-roster.md](expert-roster.md) | The 12-agent team, each role's job, and which agents share each skill |
+| — | [decisions.md](decisions.md) | Decision log: static+Functions only, approve → `main`, Netlify Free plan, fine-grained PAT, team structure |
+| — | [expert-roster.md](expert-roster.md) | The 12-agent team, each role's job, and which agents share each skill (built in `.claude/agents` and `.claude/skills`; see `/CLAUDE.md`) |
 
 ## Key decisions at a glance
 
@@ -46,10 +47,13 @@ the app. Each file covers one topic and ends with its sources.
   commit via the Git Data API, fast-forward only; rate limits plus a daily token
   budget; never commit without a human click.
 
+## Resolved
+
+- Approve target, Netlify plan and token type: see [decisions.md](decisions.md).
+- The custom `personality` key in `.claude/agents/*.md` is safe: Claude Code ignores unrecognised frontmatter fields.
+
 ## Things not verified (to check while building)
 
-- Whether Claude Code ignores a custom `personality` frontmatter key in
-  `.claude/agents/*.md` (doc 04 §2).
 - The Open-Meteo Marine `forecast_days` default (the docs say both 5 and 7), so
   always pass it explicitly.
 - Rainfall-rate and daily-total flood thresholds are heuristics; calibrate them
